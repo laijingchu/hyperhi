@@ -1,7 +1,14 @@
+@keyframes bgmove {
+    0% { background-position: 0 0; }
+    100% { background-position: 450px -450px; }
+}
+
 body {
     font-family: Arial;
     font-size: 16px;
     line-height: 1.5;
+    cursor: none;
+    height: 100%;
 }
 
 h1 {
@@ -36,4 +43,60 @@ div.cursor span {
 div.cursor.is-down span {
     top: 100px;
     left: 100px;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: lighten;
+}
+
+div.pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #d4d4d4;
+    background-image: url(pattern.svg);
+    background-size: 450px 450px;
+    animation: bgmove 4s infinite linear;
+}
+
+/* section {
+    padding: 80px;
+    font-size: 200px;
+    font-weight: 700;
+    line-height: 1.1;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    user-select: none;
+}
+
+section span {
+    opacity: 0;
+} */
+
+section.scratch-out {
+    mix-blend-mode: darken;
+}
+
+div.lineup {
+    background-color: #8f12fd;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+div.lineup img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
